@@ -77,4 +77,4 @@ user_by_interest = defaultdict(list)
 for user, interest in interests:
     user_by_interest[interest].append(user)
 
-print(user_by_interest)
+
