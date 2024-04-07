@@ -46,7 +46,7 @@ def mode(x: List[float]):
 def data_range(x: List[float]) -> float:
     return max(x) - min(x)
 
-
+# variance
 def pre_variance(x: List[float]) -> List[float]:
     mean = mean_val(x)
     return [(val - mean)**2 for val in x]
@@ -55,7 +55,7 @@ def variance(x: List[float]) -> float:
     s = sum(pre_variance(x))
     return s / (len(x)-1)
 
-
+# standard deviation
 def standard_dev(x: List[float]):
     n = len(x)
     return math.sqrt(sum(pre_variance(x)) / n)
