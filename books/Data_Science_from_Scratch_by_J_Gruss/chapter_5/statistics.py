@@ -7,7 +7,7 @@ num_friends = [100, 49, 41, 40, 25]
 
 
 # calculating mean
-def mean(x: List[float]) -> float:
+def mean_val(x: List[float]) -> float:
     return sum(x) / len(x)
 
 
@@ -45,4 +45,13 @@ def mode(x: List[float]):
 def data_range(x: List[float]) -> float:
     return max(x) - min(x)
 
-print(data_range(num_friends))
+
+def pre_variance(x: List[float]) -> List[float]:
+    mean = mean_val(x)
+    return [(val - mean)**2 for val in x]
+
+def variance(x: List[float]):
+    s = sum(pre_variance(x))
+    return s / len(x)
+
+print(variance([4, -3, 2]))
