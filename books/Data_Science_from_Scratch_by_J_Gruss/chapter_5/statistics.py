@@ -2,6 +2,7 @@ from matplotlib import pyplot as plt
 from collections import Counter
 from typing import List
 import numpy as np
+import math
 
 num_friends = [100, 49, 41, 40, 25]
 
@@ -50,8 +51,14 @@ def pre_variance(x: List[float]) -> List[float]:
     mean = mean_val(x)
     return [(val - mean)**2 for val in x]
 
-def variance(x: List[float]):
+def variance(x: List[float]) -> float:
     s = sum(pre_variance(x))
-    return s / len(x)
+    return s / (len(x)-1)
 
-print(variance([4, -3, 2]))
+
+def standard_dev(x: List[float]):
+    n = len(x)
+    return math.sqrt(sum(pre_variance(x)) / n)
+
+
+print(variance([7, 4, -2]))
