@@ -41,4 +41,8 @@ def mode(x: List[float]):
             if index == max_occ]
 
 
-print(mode([20, 2, 7, 1, 34, 20, 1]))
+# range
+def data_range(x: List[float]) -> float:
+    return max(x) - min(x)
+
+print(data_range(num_friends))
