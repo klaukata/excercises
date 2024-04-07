@@ -60,5 +60,3 @@ def standard_dev(x: List[float]):
     n = len(x)
     return math.sqrt(sum(pre_variance(x)) / n)
 
-
-print(variance([7, 4, -2]))
