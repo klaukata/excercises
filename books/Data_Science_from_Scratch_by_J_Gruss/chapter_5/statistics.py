@@ -33,4 +33,12 @@ def quantile(x: List[float], p: float) -> float:
     # or return np.percentile(x, p)
 
 
-print(quantile([20, 2, 7, 1, 34], .25))
+# mode
+def mode(x: List[float]):
+    c = Counter(x)
+    max_occ = max(c.values())
+    return [val for val, index in c.items()
+            if index == max_occ]
+
+
+print(mode([20, 2, 7, 1, 34, 20, 1]))
