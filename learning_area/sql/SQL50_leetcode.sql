@@ -1,5 +1,7 @@
 -- @@@ == do it again
 
+
+
 -- 1. Recyclable and Low Fat Products - https://leetcode.com/problems/recyclable-and-low-fat-products/?envType=study-plan-v2&envId=top-sql-50
 select product_id from products
     where low_fats = "Y" and recyclable = "Y";
@@ -10,3 +12,9 @@ select name
     from Customer
     where not referee_id = 2 or referee_id is null
     order by name desc;
+
+-- 3.  Big Countries - https://leetcode.com/problems/big-countries/description/?envType=study-plan-v2&envId=top-sql-50
+select name, population, area 
+    from world
+    where area >= 3000000 or population >= 25000000
+    order by name;
