@@ -24,4 +24,8 @@ select distinct author_id as id
     from Views
     where author_id = viewer_id
     order by id;
-    
+
+-- 5. Invalid Tweets - https://leetcode.com/problems/invalid-tweets/description/?envType=study-plan-v2&envId=top-sql-50
+select tweet_id
+    from tweets
+    where length(content) > 15;
