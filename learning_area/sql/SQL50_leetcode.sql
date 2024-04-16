@@ -29,3 +29,10 @@ select distinct author_id as id
 select tweet_id
     from tweets
     where length(content) > 15;
+
+-- Basic Joins
+--1. Replace Employee ID With The Unique Identifier - https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/description/?envType=study-plan-v2&envId=top-sql-50
+-- @@@
+select EmployeeUNI.unique_id, name
+    from Employees
+    left join EmployeeUNI on Employees.id = EmployeeUNI.id;
