@@ -31,8 +31,14 @@ select tweet_id
     where length(content) > 15;
 
 -- Basic Joins
---1. Replace Employee ID With The Unique Identifier - https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/description/?envType=study-plan-v2&envId=top-sql-50
+-- 1. Replace Employee ID With The Unique Identifier - https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/description/?envType=study-plan-v2&envId=top-sql-50
 -- @@@
 select EmployeeUNI.unique_id, name
     from Employees
     left join EmployeeUNI on Employees.id = EmployeeUNI.id;
+
+-- 2. Product Sales Analysis I - https://leetcode.com/problems/product-sales-analysis-i/description/?envType=study-plan-v2&envId=top-sql-50
+select p.product_name, year, price
+    from sales
+    left join product as p on sales.product_id = p.product_id
+    order by p.product_name
