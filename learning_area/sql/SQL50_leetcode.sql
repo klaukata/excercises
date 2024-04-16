@@ -18,3 +18,10 @@ select name, population, area
     from world
     where area >= 3000000 or population >= 25000000
     order by name;
+
+-- 4. Article Views I -  https://leetcode.com/problems/article-views-i/description/?envType=study-plan-v2&envId=top-sql-50
+select distinct author_id as id
+    from Views
+    where author_id = viewer_id
+    order by id;
+    
