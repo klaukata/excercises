@@ -42,3 +42,11 @@ select p.product_name, year, price
     from sales
     left join product as p on sales.product_id = p.product_id
     order by p.product_name
+
+-- 3. Customer Who Visited but Did Not Make Any Transactions - https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/description/?envType=study-plan-v2&envId=top-sql-50
+-- @@@
+select customer_id, count(customer_id) as count_no_trans
+    from Visits
+    left join Transactions on Transactions.visit_id = Visits.visit_id
+    where Transactions.transaction_id is null
+    group by customer_id
