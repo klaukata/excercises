@@ -50,3 +50,9 @@ select customer_id, count(customer_id) as count_no_trans
     left join Transactions on Transactions.visit_id = Visits.visit_id
     where Transactions.transaction_id is null
     group by customer_id
+
+-- 4. Rising Temperature - https://leetcode.com/problems/rising-temperature/description/?envType=study-plan-v2&envId=top-sql-50
+-- @@
+select w1.id
+    from Weather w1, Weather w2
+    where datediff(w1.recordDate, w2.recordDate) = 1 and w1.temperature > w2.temperature
