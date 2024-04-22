@@ -59,7 +59,7 @@ select w1.id
 select w1.id
     from Weather w1, Weather w2
     where w1.id - w2.id = 1 and w1.temperature > w2.temperature
-    
+
 -- 6. Employee Bonus - https://leetcode.com/problems/employee-bonus/description/?envType=study-plan-v2&envId=top-sql-50
 select name, bonus
     from Employee
@@ -72,5 +72,15 @@ select st.student_id, st.student_name, su.subject_name, count(e.subject_name) as
     from Students st
     join Subjects su
     left join Examinations e on st.student_id = e.student_id and su.subject_name = e.subject_name
+    group by st.student_id, su.subject_name
+    order by st.student_id
+select 
+    st.student_id,
+    st.student_name,
+    su.subject_name,
+    count(e.subject_name) as attended_exams
+    from Students st
+    join Subjects su
+    left join Examinations e on e.student_id = st.student_id and su.subject_name = e.subject_name
     group by st.student_id, su.subject_name
     order by st.student_id
