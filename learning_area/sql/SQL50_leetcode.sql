@@ -52,11 +52,14 @@ select customer_id, count(customer_id) as count_no_trans
     group by customer_id
 
 -- 4. Rising Temperature - https://leetcode.com/problems/rising-temperature/description/?envType=study-plan-v2&envId=top-sql-50
--- @@@
+-- @@
 select w1.id
     from Weather w1, Weather w2
     where datediff(w1.recordDate, w2.recordDate) = 1 and w1.temperature > w2.temperature
-
+select w1.id
+    from Weather w1, Weather w2
+    where w1.id - w2.id = 1 and w1.temperature > w2.temperature
+    
 -- 6. Employee Bonus - https://leetcode.com/problems/employee-bonus/description/?envType=study-plan-v2&envId=top-sql-50
 select name, bonus
     from Employee
