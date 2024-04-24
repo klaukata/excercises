@@ -84,3 +84,14 @@ select
     left join Examinations e on e.student_id = st.student_id and su.subject_name = e.subject_name
     group by st.student_id, su.subject_name
     order by st.student_id
+
+-- 8. Managers with at Least 5 Direct Reports - https://leetcode.com/problems/managers-with-at-least-5-direct-reports/description/?envType=study-plan-v2&envId=top-sql-50
+-- @@@
+select name
+    from Employee
+    where id in (
+        select managerId
+        from Employee
+        group by managerId
+        having count(managerId) >= 5
+    )
