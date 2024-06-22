@@ -39,3 +39,25 @@ SELECT first_name
 FROM patients
 group by first_name
 having count(first_name) = 1
+
+-- Display every patient's first_name. Order the list by the length of each name and then by alphabetically.
+SELECT first_name
+FROM patients
+order by len(first_name), first_name
+
+-- Show the total amount of male patients and the total amount of female patients in the patients table. Display the two results in the same row.
+-- TODO -- try again
+-- solution 1
+SELECT count(*) as male_count, 
+	(
+      select count(*)
+      from patients
+      where gender = 'F'
+    ) as female_count
+FROM patients
+where gender = 'M'
+-- sol. 2
+select 
+	sum(gender = 'M') as male_count,
+    sum(gender = 'F') as female_count
+from patients
