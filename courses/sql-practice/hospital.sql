@@ -22,3 +22,9 @@ where province_id = 'NS'
 SELECT first_name, last_name, allergies
 FROM patients
 where allergies not null and city = 'Hamilton'
+
+-- Show patient_id, first_name, last_name from patients whos diagnosis is 'Dementia'.
+SELECT patients.patient_id as id, first_name, last_name
+FROM patients
+join admissions on id = admissions.patient_id
+where diagnosis = "Dementia"
