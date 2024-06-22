@@ -17,3 +17,8 @@ where patient_id = 579
 SELECT distinct city
 FROM patients
 where province_id = 'NS'
+
+-- Write a query to find list of patients first_name, last_name, and allergies where allergies are not null and are from the city of 'Hamilton'
+SELECT first_name, last_name, allergies
+FROM patients
+where allergies not null and city = 'Hamilton'
