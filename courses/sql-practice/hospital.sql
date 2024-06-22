@@ -85,3 +85,17 @@ select
 from patients
 group by city
 order by num_residents desc, city
+
+-- Show first name, last name and role of every person that is either patient or doctor.
+-- TODO - do again
+select
+	first_name,
+    last_name,
+    'Patient' as role
+from patients
+union all
+select
+	first_name,
+    last_name,
+    'Doctor' as role
+from doctors
