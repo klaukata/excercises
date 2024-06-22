@@ -12,3 +12,8 @@ where len(first_name) >= 6 and first_name like 'S%s'
 SELECT patient_id, count(*)
 FROM admissions
 where patient_id = 579
+
+-- Based on the cities that our patients live in, show unique cities that are in province_id 'NS'?
+SELECT distinct city
+FROM patients
+where province_id = 'NS'
