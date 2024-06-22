@@ -99,3 +99,12 @@ select
     last_name,
     'Doctor' as role
 from doctors
+
+-- Show all allergies ordered by popularity. Remove NULL values from query.
+select 
+	allergies,
+    count(allergies) as num_allergies
+from patients
+where allergies not null
+group by allergies
+order by num_allergies desc
