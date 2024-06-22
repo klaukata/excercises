@@ -46,7 +46,7 @@ FROM patients
 order by len(first_name), first_name
 
 -- Show the total amount of male patients and the total amount of female patients in the patients table. Display the two results in the same row.
--- TODO -- try again
+-- TODO - do again
 -- solution 1
 SELECT count(*) as male_count, 
 	(
@@ -67,3 +67,12 @@ select first_name, last_name, allergies
 from patients
 where allergies in ('Penicillin', 'Morphine')
 order by allergies, first_name, last_name
+
+-- Show patient_id, diagnosis from admissions. Find patients admitted multiple times for the same diagnosis.
+-- TODO - do again
+SELECT patient_id, diagnosis
+FROM admissions
+group by 
+	patient_id,
+    diagnosis
+having count(patient_id) > 1 and count(diagnosis) > 1
