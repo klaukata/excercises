@@ -76,3 +76,12 @@ group by
 	patient_id,
     diagnosis
 having count(patient_id) > 1 and count(diagnosis) > 1
+
+-- Show the city and the total number of patients in the city. Order from most to least patients and then by city name ascending.
+-- TODO - do again
+select 
+	city,
+    count(city) as num_residents
+from patients
+group by city
+order by num_residents desc, city
