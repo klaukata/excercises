@@ -28,3 +28,8 @@ SELECT patients.patient_id as id, first_name, last_name
 FROM patients
 join admissions on id = admissions.patient_id
 where diagnosis = "Dementia"
+
+-- Show unique birth years from patients and order them by ascending.
+SELEct distinct year(birth_date) as y
+FROM patients
+order by y
