@@ -180,3 +180,13 @@ select
 from admissions
 join doctors on attending_doctor_id = doctors.doctor_id
 group by attending_doctor_id
+
+-- For each doctor, display their id, full name, and the first and last admission date they attended.
+select 
+	d.doctor_id,
+	concat(d.first_name, ' ', d.last_name) full_name,
+	min(admission_date) first_addmission,
+    max(admission_date) last_addmission
+from admissions a
+join doctors d on attending_doctor_id = d.doctor_id
+group by attending_doctor_id
