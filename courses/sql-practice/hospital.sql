@@ -220,3 +220,17 @@ group by
 	first_name,
     last_name
 having count(*) > 1
+
+-- Display patient's full name, height in the units feet rounded to 1 decimal, weight in the unit pounds rounded to 0 decimals,
+-- birth_date, gender non abbreviated.
+-- TODO - do again
+select 
+	concat(first_name, ' ', last_name) as full_name,
+    round(height / 30.48, 1) as height_feet,
+    round(weight * 2.205) as weight_feet,
+    birth_date,
+    case
+    	when gender = 'M' then 'Male'
+        ELSE 'Female'
+    END AS gender
+from patients
