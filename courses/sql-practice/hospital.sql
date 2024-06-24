@@ -287,3 +287,16 @@ select
     concat(p.patient_id, len(last_name), year(birth_date)) as temp_password
 from patients p
 join admissions a on p.patient_id = a.patient_id
+
+-- Each admission costs $50 for patients without insurance, and $10 for patients with insurance. All patients with an even patient_id have insurance. 
+select
+	case
+      when patient_id % 2 = 0 THEN 'Yes'
+      ELSE 'No'
+    END as has_insurance,
+    sum(case
+      when patient_id % 2 = 0 THEN 10
+      ELSE 50
+    END) as cost_after_insurance
+from admissions
+group by has_insurance
