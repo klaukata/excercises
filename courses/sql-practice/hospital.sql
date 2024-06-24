@@ -135,3 +135,19 @@ having sum(height) >= 7000
 select (max(weight) - min(weight))
 from patients
 where last_name = 'Maroni'
+
+-- Show all of the days of the month (1-31) and how many admission_dates occurred on that day. Sort by the day with most admissions to least admissions.
+-- TODO - do again
+select 
+	day(admission_date) as days,
+    count(admission_date) as admissions_num
+from admissions
+group by days
+order by admissions_num desc
+
+-- Show all columns for patient_id 542's most recent admission_date.
+select *
+from admissions
+where patient_id = 542
+group by patient_id
+having max(admission_date)
