@@ -308,3 +308,20 @@ from patients pa
 join province_names pr on pa.province_id = pr.province_id
 group by province_name
 having sum(gender = 'M') > sum(gender = 'F')
+
+-- We are looking for a specific patient. Pull all columns for the patient who matches the following criteria:
+-- - First_name contains an 'r' after the first two letters.
+-- - Identifies their gender as 'F'
+-- - Born in February, May, or December
+-- - Their weight would be between 60kg and 80kg
+-- - Their patient_id is an odd number
+-- - They are from the city 'Kingston'
+select *
+from patients
+where 
+	first_name like '__r%' AND
+    gender = 'F' AND
+    month(birth_date) IN (2, 5, 12) AND
+    weight between 60 AND 80 AND
+    patient_id % 2 != 0 AND
+    city = 'Kingston'
