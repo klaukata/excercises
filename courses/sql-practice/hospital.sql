@@ -234,3 +234,12 @@ select
         ELSE 'Female'
     END AS gender
 from patients
+
+-- Show patient_id, first_name, last_name from patients whose does not have any records in the admissions table.
+select 
+	pa.patient_id,
+    first_name,
+    last_name
+from patients pa
+LEFT JOIN admissions ad ON pa.patient_id = ad.patient_id
+where ad.patient_id is null
