@@ -146,8 +146,15 @@ group by days
 order by admissions_num desc
 
 -- Show all columns for patient_id 542's most recent admission_date.
+-- sol1
 select *
 from admissions
 where patient_id = 542
 group by patient_id
 having max(admission_date)
+-- sol2
+select *
+from admissions
+where patient_id = 542
+order by admission_date desc
+limit 1
