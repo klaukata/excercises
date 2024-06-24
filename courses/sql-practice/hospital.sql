@@ -325,3 +325,14 @@ where
     weight between 60 AND 80 AND
     patient_id % 2 != 0 AND
     city = 'Kingston'
+
+-- Show the percent of patients that have 'M' as their gender. Round the answer to the nearest hundreth number and in percent form.
+-- TODO - do again
+select 
+	concat(
+      ROUND(
+      	SUM(gender = 'M') / CAST(count(gender) AS float) * 100,
+      2),
+      '%'
+    ) AS males_percent
+from patients
