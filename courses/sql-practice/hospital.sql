@@ -273,6 +273,7 @@ join doctors d on attending_doctor_id = d.doctor_id
 where diagnosis = 'Epilepsy' and d.first_name = 'Lisa'
 
 -- All patients who have gone through admissions, can see their medical documents on our site. Those patients are given a temporary password after their first admission. Show the patient_id and temp_password. 
+-- sol1
 select 
 	p.patient_id,
 	concat(p.patient_id, len(last_name), year(birth_date)) as temp_password
@@ -280,3 +281,9 @@ from patients p
 left join admissions a on p.patient_id = a.patient_id
 where a.patient_id not null
 group by p.patient_id
+-- sol2
+select 
+	distinct p.patient_id,
+    concat(p.patient_id, len(last_name), year(birth_date)) as temp_password
+from patients p
+join admissions a on p.patient_id = a.patient_id
