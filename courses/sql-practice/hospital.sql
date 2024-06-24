@@ -208,3 +208,15 @@ select
 from admissions ad
 join patients pa on pa.patient_id = ad.patient_id
 join doctors do on do.doctor_id = attending_doctor_id
+
+-- display the first name, last name and number of duplicate patients based on their first name and last name. 
+-- TODO - do again
+select 
+	first_name,
+    last_name,
+    count(*) as duplicates_num
+from patients
+group by
+	first_name,
+    last_name
+having count(*) > 1
