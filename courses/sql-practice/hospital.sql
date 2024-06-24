@@ -78,7 +78,6 @@ group by
 having count(patient_id) > 1 and count(diagnosis) > 1
 
 -- Show the city and the total number of patients in the city. Order from most to least patients and then by city name ascending.
--- TODO - do again
 select 
 	city,
     count(city) as num_residents
@@ -87,7 +86,6 @@ group by city
 order by num_residents desc, city
 
 -- Show first name, last name and role of every person that is either patient or doctor.
--- TODO - do again
 select
 	first_name,
     last_name,
@@ -137,7 +135,6 @@ from patients
 where last_name = 'Maroni'
 
 -- Show all of the days of the month (1-31) and how many admission_dates occurred on that day. Sort by the day with most admissions to least admissions.
--- TODO - do again
 select 
 	day(admission_date) as days,
     count(admission_date) as admissions_num
