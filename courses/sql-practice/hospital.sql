@@ -171,3 +171,12 @@ where
 	(attending_doctor_id like '%2%' and len(patient_id) = 3)
     or
     (patient_id % 2 != 0 and attending_doctor_id in (1, 5, 19))
+
+-- Show first_name, last_name, and the total number of admissions attended for each doctor.
+select 
+	doctors.first_name,
+    doctors.last_name,
+    count(attending_doctor_id) admissions_number
+from admissions
+join doctors on attending_doctor_id = doctors.doctor_id
+group by attending_doctor_id
