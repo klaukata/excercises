@@ -240,3 +240,12 @@ select
 from patients pa
 LEFT JOIN admissions ad ON pa.patient_id = ad.patient_id
 where ad.patient_id is null
+
+-- Show all of the patients grouped into weight groups. Show the total amount of patients in each weight group.
+-- Order the list by the weight group decending.
+select 
+	count(weight),
+    weight / 10 * 10 as weight_group
+from patients
+group by weight_group
+order by weight_group desc
