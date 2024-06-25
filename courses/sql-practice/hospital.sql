@@ -69,7 +69,6 @@ where allergies in ('Penicillin', 'Morphine')
 order by allergies, first_name, last_name
 
 -- Show patient_id, diagnosis from admissions. Find patients admitted multiple times for the same diagnosis.
--- TODO - do again
 SELECT patient_id, diagnosis
 FROM admissions
 group by 
@@ -207,7 +206,6 @@ join patients pa on pa.patient_id = ad.patient_id
 join doctors do on do.doctor_id = attending_doctor_id
 
 -- display the first name, last name and number of duplicate patients based on their first name and last name. 
--- TODO - do again
 select 
 	first_name,
     last_name,
@@ -220,7 +218,6 @@ having count(*) > 1
 
 -- Display patient's full name, height in the units feet rounded to 1 decimal, weight in the unit pounds rounded to 0 decimals,
 -- birth_date, gender non abbreviated.
--- TODO - do again
 select 
 	concat(first_name, ' ', last_name) as full_name,
     round(height / 30.48, 1) as height_feet,
@@ -327,7 +324,6 @@ where
     city = 'Kingston'
 
 -- Show the percent of patients that have 'M' as their gender. Round the answer to the nearest hundreth number and in percent form.
--- TODO - do again
 select 
 	concat(
       ROUND(
