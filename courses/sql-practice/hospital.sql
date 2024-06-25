@@ -336,3 +336,14 @@ select
       '%'
     ) AS males_percent
 from patients
+
+-- For each day display the total amount of admissions on that day. Display the amount changed from the previous date.
+-- TODO - do again
+select 
+	admission_date,
+    count(admission_date) as admission_amout_per_day,
+    count(admission_date) 
+		- lag(count(admission_date), 1, null) over (order by admission_date) 
+		as admission_amout_change
+from admissions
+group by admission_date
