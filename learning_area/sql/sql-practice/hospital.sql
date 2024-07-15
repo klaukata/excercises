@@ -46,7 +46,6 @@ FROM patients
 order by len(first_name), first_name
 
 -- Show the total amount of male patients and the total amount of female patients in the patients table. Display the two results in the same row.
--- TODO - do again
 -- solution 1
 SELECT count(*) as male_count, 
 	(
@@ -299,7 +298,6 @@ from admissions
 group by has_insurance
 
 -- Show the provinces that has more patients identified as 'M' than 'F'. Must only show full province_name
--- TODO - do again
 select province_name
 from patients pa
 join province_names pr on pa.province_id = pr.province_id
@@ -334,7 +332,6 @@ select
 from patients
 
 -- For each day display the total amount of admissions on that day. Display the amount changed from the previous date.
--- TODO - do again
 select 
 	admission_date,
     count(admission_date) as admission_amout_per_day,
@@ -345,7 +342,6 @@ from admissions
 group by admission_date
 
 -- Sort the province names in ascending order in such a way that the province 'Ontario' is always on top.
--- TODO - do again
 select province_name
 from province_names
 order by
