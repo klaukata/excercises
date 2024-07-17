@@ -36,3 +36,13 @@ where shipped_date > required_date
 select order_id
 from orders
 where order_id % 2 = 0
+
+-- Show the city, company_name, contact_name of all customers from cities which contains the letter 'L' in the city name, sorted by contact_name
+-- TODO
+select 
+	city,
+    company_name,
+    contact_name
+from customers
+where city like '%l%'
+order by contact_name
