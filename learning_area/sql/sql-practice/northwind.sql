@@ -74,3 +74,12 @@ select category_name, Round(avg(unit_price), 2) as rounded_unit_price
 from products p
 join categories c on p.category_id = c.category_id
 group by category_name
+
+-- Show the city, company_name, contact_name from the customers and suppliers table merged together.
+-- Create a column which contains 'customers' or 'suppliers' depending on the table it came from.
+-- TODO
+select city, company_name, contact_name, 'customers' as relationship
+from customers
+union
+select city, company_name, contact_name, 'suppliers' as relationship
+from suppliers
