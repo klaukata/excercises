@@ -62,3 +62,9 @@ select
     last_name,
     max(hire_date)
 from employees
+
+-- Show the ProductName, CompanyName, CategoryName from the products, suppliers, and categories table
+select product_name, s.company_name, c.category_name
+from products as p
+join suppliers s on s.supplier_id = p.supplier_id
+join categories c on c.category_id = p.category_id
