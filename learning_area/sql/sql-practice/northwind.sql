@@ -68,3 +68,9 @@ select product_name, s.company_name, c.category_name
 from products as p
 join suppliers s on s.supplier_id = p.supplier_id
 join categories c on c.category_id = p.category_id
+
+-- Show the category_name and the average product unit price for each category rounded to 2 decimal places.
+select category_name, Round(avg(unit_price), 2) as rounded_unit_price
+from products p
+join categories c on p.category_id = c.category_id
+group by category_name
