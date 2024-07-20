@@ -103,3 +103,16 @@ order by
 	last_name,
     first_name,
     num_orders desc
+
+-- Show how much money the company lost due to giving discounts each year, order the years from most recent to least recent. Round to 2 decimal places
+SELECT 
+	year(order_date) as order_year,
+    round(
+      sum(discount * p.unit_price * quantity), 2
+    ) as discount_amount
+FROM order_details od
+join products p on od.product_id = p.product_id
+join orders o on od.order_id = o.order_id
+where discount != 0
+group by order_year
+order by order_year desc
