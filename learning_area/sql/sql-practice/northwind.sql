@@ -38,7 +38,6 @@ from orders
 where order_id % 2 = 0
 
 -- Show the city, company_name, contact_name of all customers from cities which contains the letter 'L' in the city name, sorted by contact_name
--- TODO
 select 
 	city,
     company_name,
@@ -56,7 +55,6 @@ from customers
 where fax not null
 
 -- Show the first_name, last_name. hire_date of the most recently hired employee.
--- TODO
 select 
 	first_name,
     last_name,
@@ -77,7 +75,6 @@ group by category_name
 
 -- Show the city, company_name, contact_name from the customers and suppliers table merged together.
 -- Create a column which contains 'customers' or 'suppliers' depending on the table it came from.
--- TODO
 select city, company_name, contact_name, 'customers' as relationship
 from customers
 union
@@ -88,7 +85,7 @@ from suppliers
 -- and a column called "Shipped" that displays "On Time" if the order shipped_date is less or equal to the 
 -- required_date, "Late" if the order shipped late.
 -- Order by employee last_name, then by first_name, and then descending by number of orders.
--- TODO
+-- TODO maybe again?
 select 
 	first_name,
     last_name,
