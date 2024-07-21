@@ -74,5 +74,18 @@ from employee
 where salary > 2000 and months < 10
 order by employee_id
 
+-- Query the difference between the maximum and minimum populations in CITY.
+-- LINK: https://www.hackerrank.com/challenges/population-density-difference/problem?isFullScreen=true
+select max(population) - min(population)
+from city
+
+-- 
+-- LINK: 
+-- 
+-- LINK: 
+-- 
+-- LINK: 
+-- 
+-- LINK: 
 -- 
 -- LINK: 
