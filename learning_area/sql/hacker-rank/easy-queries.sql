@@ -15,3 +15,11 @@ select name from city where population > 120000 and countrycode = 'USA';
 select *
 from city
 
+-- Query all columns for a city in CITY with the ID 1661.
+-- LINK: https://www.hackerrank.com/challenges/select-by-id/problem?isFullScreen=true
+select *
+from city
+where id=1661
+
+-- 
+-- LINK: 
