@@ -87,8 +87,14 @@ select
     ceil(avg(salary) - avg(replace(salary, '0', '')))
 from employees
 
--- 
--- LINK: 
+-- Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+-- LINK: https://www.hackerrank.com/challenges/weather-observation-station-6/problem?isFullScreen=true
+-- todo
+select distinct city
+from station
+where left(city, 1) in ('A', 'E', 'I', 'O', 'U')
+
+
 -- 
 -- LINK: 
 -- 
