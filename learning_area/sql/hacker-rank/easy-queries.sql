@@ -107,5 +107,27 @@ select distinct city
 from station
 where left(city, 1) not in ('A', 'E', 'I', 'O', 'U')
 
+-- Query the following two values from the STATION table: [..]
+-- LINK: https://www.hackerrank.com/challenges/weather-observation-station-2/problem?isFullScreen=true
+select 
+    round(sum(LAT_N),2),
+    round(sum(LONG_W),2)
+from station
+
 -- 
--- LINK: cxc
+-- LINK:
+
+-- 
+-- LINK:
+
+-- 
+-- LINK:
+
+-- 
+-- LINK:
+
+-- 
+-- LINK:
+
+-- 
+-- LINK:
