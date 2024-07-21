@@ -128,8 +128,11 @@ select
 from station
 where LAT_N < 137.2345 
 
--- 
--- LINK:
+-- Query a count of the number of cities in CITY having a Population larger than 100k. 
+-- LINK: https://www.hackerrank.com/challenges/revising-aggregations-the-count-function/problem?isFullScreen=true
+select count(id)
+from city
+where population > 100000
 
 -- 
 -- LINK:
