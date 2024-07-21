@@ -114,8 +114,12 @@ select
     round(sum(LONG_W),2)
 from station
 
--- 
--- LINK:
+-- Query the sum of Northern Latitudes (LAT_N) from STATION having values greater than ...
+-- LINK: https://www.hackerrank.com/challenges/weather-observation-station-13/problem?isFullScreen=true
+select 
+    round(sum(LAT_N),4)
+from station
+where LAT_N < 137.2345 and LAT_N > 38.7880
 
 -- 
 -- LINK:
