@@ -95,8 +95,12 @@ from station
 where left(city, 1) in ('A', 'E', 'I', 'O', 'U')
 
 
--- 
--- LINK: 
+-- Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
+-- LINK: https://www.hackerrank.com/challenges/weather-observation-station-7/problem?isFullScreen=true
+select distinct city
+from station
+where right(city, 1) in ('a', 'e', 'i', 'o', 'u')
+
 -- 
 -- LINK: 
 -- 
