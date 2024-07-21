@@ -85,7 +85,6 @@ from suppliers
 -- and a column called "Shipped" that displays "On Time" if the order shipped_date is less or equal to the 
 -- required_date, "Late" if the order shipped late.
 -- Order by employee last_name, then by first_name, and then descending by number of orders.
--- TODO maybe again?
 select 
 	first_name,
     last_name,
