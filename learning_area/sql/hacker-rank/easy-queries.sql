@@ -9,5 +9,9 @@ where countrycode = 'USA' and population > 100000
 -- LINK: https://www.hackerrank.com/challenges/revising-the-select-query-2/problem?isFullScreen=true
 select name from city where population > 120000 and countrycode = 'USA';
 
--- 
--- LINK: 
+
+-- Query all columns (attributes) for every row in the CITY table.
+-- LINK: https://www.hackerrank.com/challenges/select-all-sql/problem?isFullScreen=true
+select *
+from city
+
