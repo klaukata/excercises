@@ -60,8 +60,11 @@ order by
     right(name, 3),
     id
 
--- 
--- LINK: 
+-- Write a query that prints a list of employee names (i.e.: the name attribute) from the Employee table in alphabetical order.
+-- LINK: https://www.hackerrank.com/challenges/name-of-employees/problem?isFullScreen=true
+select name
+from employee
+order by name
 
 -- 
 -- LINK: 
