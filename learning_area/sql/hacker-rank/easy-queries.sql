@@ -79,8 +79,14 @@ order by employee_id
 select max(population) - min(population)
 from city
 
--- 
--- LINK: 
+-- Samantha was tasked with calculating the average monthly salaries for all employees in the EMPLOYEES table, [...]
+-- Write a query calculating the amount of error and round it up to the next integer.
+-- LINK: https://www.hackerrank.com/challenges/the-blunder/problem?isFullScreen=true
+-- todo
+select 
+    ceil(avg(salary) - avg(replace(salary, '0', '')))
+from employees
+
 -- 
 -- LINK: 
 -- 
