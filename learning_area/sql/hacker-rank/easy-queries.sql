@@ -101,7 +101,11 @@ select distinct city
 from station
 where right(city, 1) in ('a', 'e', 'i', 'o', 'u')
 
+-- Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.
+-- LINK: https://www.hackerrank.com/challenges/weather-observation-station-9/problem?isFullScreen=true
+select distinct city
+from station
+where left(city, 1) not in ('A', 'E', 'I', 'O', 'U')
+
 -- 
--- LINK: 
--- 
--- LINK: 
+-- LINK: cxc
