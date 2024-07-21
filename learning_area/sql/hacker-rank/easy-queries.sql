@@ -121,8 +121,12 @@ select
 from station
 where LAT_N < 137.2345 and LAT_N > 38.7880
 
--- 
--- LINK:
+-- Query the greatest value of the Northern Latitudes (LAT_N) from STATION that is less than ...
+-- LINK: https://www.hackerrank.com/challenges/weather-observation-station-14/problem?isFullScreen=true
+select 
+    round(max(LAT_N),4)
+from station
+where LAT_N < 137.2345 
 
 -- 
 -- LINK:
