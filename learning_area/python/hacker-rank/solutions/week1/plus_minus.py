@@ -31,5 +31,25 @@ def plusMinus(arr):
         print(f'{round(val / len(arr), 6):.6f}')
 
 
-x = [1,1,0,-1,-1]
-plusMinus(x)
+# mini-max sum
+# excercise description - https://www.hackerrank.com/challenges/three-month-preparation-kit-mini-max-sum/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-one
+# solution a
+def miniMaxSum(arr):
+    max, min = arr[0], arr[0]
+    sum = 0
+    for x in arr:
+        sum += x
+        if max < x:
+            max = x
+        if min > x:
+            min = x
+    print(f'{sum - max} {sum - min}')
+
+# solution b
+def miniMaxSum(arr):
+    arr.sort()
+    min, max = arr[0], arr[-1]
+    sum = 0
+    for x in arr:
+        sum += x
+    print(f'{sum - max} {sum - min}')
