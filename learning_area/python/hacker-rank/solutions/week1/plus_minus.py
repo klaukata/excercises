@@ -53,3 +53,19 @@ def miniMaxSum(arr):
     for x in arr:
         sum += x
     print(f'{sum - max} {sum - min}')
+
+# Given a time in 12-hour AM/PM format, convert it to military (24-hour) time. 
+# https://www.hackerrank.com/challenges/three-month-preparation-kit-time-conversion/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-one
+# TODO
+def timeConversion(s):
+    arr = s.split(':')
+    hh, midday = arr[0], arr[2][-2:]
+    if midday == 'PM':
+        if hh != '12':
+            s = s.replace(hh, str(int(hh) + 12))
+    else:
+        if hh == '12':
+            s = s.replace(hh, '00')
+    return s[:-2]
+
+print(timeConversion('12:01:00AM'))
