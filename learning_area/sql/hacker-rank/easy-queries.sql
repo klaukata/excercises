@@ -163,5 +163,21 @@ where LAT_N > 38.778
 order by LAT_N
 limit 1
 
+-- Query the Manhattan Distance between points p1 and p2 and round it to a scale of 4 decimal places.
+-- LINK: https://www.hackerrank.com/challenges/weather-observation-station-18/problem?isFullScreen=true
+-- todo
+select 
+    round(abs(min(LAT_N) - max(LAT_N)) + abs(min(LONG_W) - max(LONG_W)), 4)
+from station
+
+-- 
+-- LINK:
+
+-- 
+-- LINK:
+
+-- 
+-- LINK:
+
 -- 
 -- LINK:
