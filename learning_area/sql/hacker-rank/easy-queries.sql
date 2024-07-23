@@ -134,8 +134,26 @@ select count(id)
 from city
 where population > 100000
 
--- 
--- LINK:
+-- Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths 
+-- LINK: https://www.hackerrank.com/challenges/weather-observation-station-5/problem?isFullScreen=true
+-- todo
+(select 
+    city,
+    length(city) as len
+from station
+order by 
+    len,
+    city
+limit 1)
+union 
+(select 
+    city,
+    length(city) as len
+from station
+order by 
+    len desc,
+    city
+limit 1)
 
 -- 
 -- LINK:
