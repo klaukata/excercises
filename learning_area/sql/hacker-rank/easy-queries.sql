@@ -254,8 +254,23 @@ from city ci
 join country co on ci.CountryCode = co.code
 group by continent
 
--- 
--- LINK: 
+-- "the report" excercise
+-- LINK: https://www.hackerrank.com/challenges/the-report/problem?isFullScreen=true
+-- TODO
+select 
+    case
+        when grade >= 8 then name
+        else NULL
+    end,
+    grade,
+    marks
+from students s
+join grades g on marks between min_mark and max_mark
+order by
+    grade desc,
+    name,
+    marks
+
 -- 
 -- LINK: 
 -- 
