@@ -170,8 +170,11 @@ select
     round(abs(min(LAT_N) - max(LAT_N)) + abs(min(LONG_W) - max(LONG_W)), 4)
 from station
 
--- 
--- LINK:
+-- Query the total population of all cities in CITY where District is California. 
+-- LINK: https://www.hackerrank.com/challenges/revising-aggregations-sum/problem?isFullScreen=true
+select sum(population)
+from city
+where district = 'California'
 
 -- 
 -- LINK:
