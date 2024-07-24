@@ -243,8 +243,17 @@ from city ci
 join country co on ci.CountryCode = co.code
 where continent = 'Africa'
 
--- 
--- LINK: 
+-- Given the CITY and COUNTRY tables, query the names of all the continents (COUNTRY.Continent) and their respective 
+-- average city populations (CITY.Population) rounded down to the nearest integer.
+-- LINK: https://www.hackerrank.com/challenges/average-population-of-each-continent/problem?isFullScreen=true
+-- todo
+select 
+    continent,
+    floor(avg(ci.population))
+from city ci
+join country co on ci.CountryCode = co.code
+group by continent
+
 -- 
 -- LINK: 
 -- 
