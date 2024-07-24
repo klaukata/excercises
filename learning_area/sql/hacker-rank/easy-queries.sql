@@ -228,5 +228,13 @@ select
         )   
     , 4)
 from station
+
+-- Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
+-- LINK: https://www.hackerrank.com/challenges/asian-population/problem?isFullScreen=true
+select sum(ci.population)
+from city ci
+join country co on ci.CountryCode = co.code
+where continent = 'Asia'
+
 -- 
--- LINK:
+-- LINK: 
