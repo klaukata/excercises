@@ -236,5 +236,24 @@ from city ci
 join country co on ci.CountryCode = co.code
 where continent = 'Asia'
 
+-- Given the CITY and COUNTRY tables, query the names of all cities where the CONTINENT is 'Africa'. 
+-- LINK: https://www.hackerrank.com/challenges/african-cities/problem?isFullScreen=true
+select ci.name
+from city ci
+join country co on ci.CountryCode = co.code
+where continent = 'Africa'
+
+-- 
+-- LINK: 
+-- 
+-- LINK: 
+-- 
+-- LINK: 
+-- 
+-- LINK: 
+-- 
+-- LINK: 
+-- 
+-- LINK: 
 -- 
 -- LINK: 
