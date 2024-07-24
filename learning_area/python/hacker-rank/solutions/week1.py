@@ -68,4 +68,17 @@ def timeConversion(s):
             s = s.replace(hh, '00')
     return s[:-2]
 
-print(timeConversion('12:01:00AM'))
+
+# Given the scores for a season, determine the number of times Maria breaks her records for most and least points scored during the season.
+# https://www.hackerrank.com/challenges/three-month-preparation-kit-breaking-best-and-worst-records/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-one
+def breakingRecords(scores):
+    res = [0, 0]
+    min_score, max_score = scores[0], scores[0]
+    for score in scores[1:]:
+        if score < min_score:
+            min_score = score
+            res[1] += 1
+        elif score > max_score:
+            max_score = score
+            res[0] += 1
+    return res
