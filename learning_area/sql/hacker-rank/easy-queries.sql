@@ -193,8 +193,15 @@ select sum(population)
 from city
 where countrycode = 'JPN'
 
--- 
--- LINK:
+-- Write a query to find the maximum total earnings for all employees as well as the total number of employees who have maximum total earnings. 
+-- LINK: https://www.hackerrank.com/challenges/earnings-of-employees/problem?isFullScreen=true
+select 
+    salary * months as total_earnings,
+    count(*) as num
+from employee
+group by total_earnings
+order by total_earnings desc
+limit 1
 
 -- 
 -- LINK:
