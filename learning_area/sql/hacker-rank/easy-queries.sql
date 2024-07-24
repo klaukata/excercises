@@ -217,8 +217,16 @@ select round(min(LAT_N), 4)
 from station
 where LAT_N > 38.7780
 
--- 
--- LINK:
-
+-- Query the Euclidean Distance between points P1 and P2 and format your answer to display decimal digits
+-- LINK: https://www.hackerrank.com/challenges/weather-observation-station-19/problem?isFullScreen=true
+select 
+    round(
+         sqrt(
+            pow(min(LAT_N) - max(LAT_N), 2)
+            +
+            pow(min(LONG_W) - max(LONG_W), 2)
+        )   
+    , 4)
+from station
 -- 
 -- LINK:
