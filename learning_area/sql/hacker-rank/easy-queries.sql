@@ -182,8 +182,10 @@ select avg(population)
 from city
 where district = 'California'
 
--- 
--- LINK:
+-- Query the average population for all cities in CITY, rounded down to the nearest integer.
+-- LINK: https://www.hackerrank.com/challenges/average-population/problem?isFullScreen=true
+select round(avg(population))
+from city
 
 -- 
 -- LINK:
