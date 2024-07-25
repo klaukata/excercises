@@ -52,7 +52,6 @@ from station
 -- Query the Name of any student in STUDENTS who scored higher than Marks. Order your output by the last three characters of each name. 
 -- If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
 -- LINK: https://www.hackerrank.com/challenges/more-than-75-marks/problem?isFullScreen=true
--- todo
 select name
 from students
 where marks > 75
@@ -89,7 +88,6 @@ from employees
 
 -- Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
 -- LINK: https://www.hackerrank.com/challenges/weather-observation-station-6/problem?isFullScreen=true
--- todo
 select distinct city
 from station
 where left(city, 1) in ('A', 'E', 'I', 'O', 'U')
@@ -136,7 +134,6 @@ where population > 100000
 
 -- Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths 
 -- LINK: https://www.hackerrank.com/challenges/weather-observation-station-5/problem?isFullScreen=true
--- todo
 (select 
     city,
     length(city) as len
