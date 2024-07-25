@@ -268,8 +268,22 @@ order by
     name,
     marks
 
--- 
--- LINK: 
+-- Write a query to print the star pattern P(20).
+-- LINK: https://www.hackerrank.com/challenges/draw-the-triangle-1/problem
+-- TODO !!!
+delimiter $$
+create procedure print()
+begin
+    declare x int;
+    set x = 20;
+    while x > 0 do
+        select if(x=1, '*', repeat('* ', x));
+        set x = x - 1;
+    end while;
+end
+$$
+delimiter ;
+call print()
 -- 
 -- LINK: 
 -- 
