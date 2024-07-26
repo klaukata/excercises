@@ -284,8 +284,18 @@ end
 $$
 delimiter ;
 call print()
--- 
--- LINK: 
+
+-- Write a query identifying the type of each record in the TRIANGLES table using its three side lengths
+-- LINK: https://www.hackerrank.com/challenges/what-type-of-triangle/problem?isFullScreen=true
+select 
+    case
+        when a >= b+c or b >= a+c or c >= a+b then 'Not A Triangle'
+        when a = b and a = c then 'Equilateral'
+        when a = b or a = c or b = c then 'Isosceles'
+        else 'Scalene'
+    end
+from triangles 
+
 -- 
 -- LINK: 
 -- 
