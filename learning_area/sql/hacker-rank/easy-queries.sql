@@ -296,8 +296,22 @@ select
     end
 from triangles 
 
--- 
--- LINK: 
+-- Write a query to print the pattern P(20).
+-- LINK: https://www.hackerrank.com/challenges/draw-the-triangle-2/problem?isFullScreen=true
+delimiter $$
+create procedure print_stars()
+begin
+    declare x int;
+    set x = 1;
+    while x < 21 do
+        select repeat('* ', x);
+        set x = x + 1;
+    end while;
+end
+$$
+delimiter ;
+call print_stars() 
+
 -- 
 -- LINK: 
 -- 
