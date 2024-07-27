@@ -311,8 +311,3 @@ end
 $$
 delimiter ;
 call print_stars() 
-
--- 
--- LINK: 
--- 
--- LINK: 
