@@ -82,3 +82,16 @@ def breakingRecords(scores):
             max_score = score
             res[0] += 1
     return res
+
+
+# Given an array of integers and a positive integer k, determine the number of pairs where i < j and arr[i] + arr[j] is divisible by k. 
+# https://www.hackerrank.com/challenges/three-month-preparation-kit-divisible-sum-pairs/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-one
+def divisibleSumPairs(n, k, ar):
+    n_pairs = 0
+    for i in range(n):
+        for j in range(i+1, n):
+            if ar[i] + ar[j] % k == 0:
+                n_pairs += 1
+    return n_pairs
+
+print(divisibleSumPairs(6, 5, [1, 3, 2, 6, 1, 2]))
