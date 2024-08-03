@@ -81,7 +81,6 @@ from city
 -- Samantha was tasked with calculating the average monthly salaries for all employees in the EMPLOYEES table, [...]
 -- Write a query calculating the amount of error and round it up to the next integer.
 -- LINK: https://www.hackerrank.com/challenges/the-blunder/problem?isFullScreen=true
--- todo
 select 
     ceil(avg(salary) - avg(replace(salary, '0', '')))
 from employees
@@ -162,7 +161,6 @@ limit 1
 
 -- Query the Manhattan Distance between points p1 and p2 and round it to a scale of 4 decimal places.
 -- LINK: https://www.hackerrank.com/challenges/weather-observation-station-18/problem?isFullScreen=true
--- todo
 select 
     round(abs(min(LAT_N) - max(LAT_N)) + abs(min(LONG_W) - max(LONG_W)), 4)
 from station
@@ -243,7 +241,6 @@ where continent = 'Africa'
 -- Given the CITY and COUNTRY tables, query the names of all the continents (COUNTRY.Continent) and their respective 
 -- average city populations (CITY.Population) rounded down to the nearest integer.
 -- LINK: https://www.hackerrank.com/challenges/average-population-of-each-continent/problem?isFullScreen=true
--- todo
 select 
     continent,
     floor(avg(ci.population))
