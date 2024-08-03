@@ -95,4 +95,15 @@ def divisibleSumPairs(n, k, ar):
     return n_pairs
 
 
-#
+# There is a collection of input strings and a collection of query strings. For each query string, determine how many times 
+# it occurs in the list of input strings. Return an array of the results. 
+# https://www.hackerrank.com/challenges/three-month-preparation-kit-sparse-arrays/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-one
+def matchingStrings(strings, queries) -> list:
+    result = []
+    for query in queries: 
+        n = 0
+        for str in strings: 
+            if query == str: 
+                n += 1
+        result.append(n)
+    return result
