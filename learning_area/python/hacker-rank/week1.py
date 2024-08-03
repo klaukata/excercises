@@ -94,4 +94,5 @@ def divisibleSumPairs(n, k, ar):
                 n_pairs += 1
     return n_pairs
 
-print(divisibleSumPairs(6, 5, [1, 3, 2, 6, 1, 2]))
+
+#
