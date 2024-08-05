@@ -107,3 +107,31 @@ def matchingStrings(strings, queries) -> list:
                 n += 1
         result.append(n)
     return result
+
+# Write a program that creates or splits Camel Case variable, method, and class names
+# link: https://www.hackerrank.com/challenges/three-month-preparation-kit-camel-case/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-one
+def camel_case(line):
+    y = line[2:3]
+    arr = list(line[4:])  # str to arr
+    if line[:1] == 'S':
+        for i, char in enumerate(arr):
+            if char.isupper():  # see if a char is upper
+                arr[i] = ' ' + char.lower()  # upper to lower
+        if y == 'M':
+            print(''.join(arr)[:-2])
+        else:
+            print(''.join(arr).lstrip()) 
+    else: # if x == c
+        for i, char in enumerate(arr):
+            if char == ' ':
+                arr[i+1] = arr[i+1].upper()
+        if y == 'M':
+            print(''.join(arr).replace(' ', '') + '()')
+        else:
+            if y == 'C':
+                arr[0] = arr[0].upper()
+            print(''.join(arr).replace(' ', ''))
+
+
+
+        
