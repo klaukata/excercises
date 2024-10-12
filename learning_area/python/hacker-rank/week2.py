@@ -16,3 +16,15 @@ def lonelyinteger2(a):
     for x in a:
         if a.count(x) == 1:
             return x
+
+# Grading Students
+# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-grading/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-two
+def gradingStudents(grades):
+    res = []
+    for grade in grades:
+        if grade >= 38:
+            mult_five = ((grade // 5) + 1) * 5
+            if mult_five - grade < 3:
+                grade = mult_five
+        res.append(grade)
+    return res
