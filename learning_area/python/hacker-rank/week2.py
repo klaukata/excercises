@@ -28,3 +28,16 @@ def gradingStudents(grades):
                 grade = mult_five
         res.append(grade)
     return res
+
+# Flipping bits
+# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-flipping-bits/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-two
+# TODO
+def flippingBits(n):
+    bin_str = format(n, '032b')
+    bin_arr = list(map(int, bin_str))
+    for i, b in enumerate(bin_arr):
+        bin_arr[i] ^= 0b1
+    inv_str = ''.join(str(bi) for bi in bin_arr)
+    inv_num = int(inv_str, 2)
+    return inv_num
+
