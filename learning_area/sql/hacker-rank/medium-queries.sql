@@ -20,6 +20,32 @@ join employee e
     and e.lead_manager_code = lm.lead_manager_code and e.company_code = c.company_code
 group by c.company_code, founder
 
+-- The Report
+-- LINK: https://www.hackerrank.com/challenges/the-report/problem?isFullScreen=true
+select 
+    case
+        when grade < 8 then "NULL" else name
+    end,
+    grade,
+    marks
+from students s
+join grades g on marks between min_mark and max_mark
+order by grade desc, name
+
+-- 
+-- LINK: 
+
+-- 
+-- LINK: 
+
+-- 
+-- LINK: 
+
+-- 
+-- LINK: 
+
+-- 
+-- LINK: 
 
 -- 
 -- LINK: 
