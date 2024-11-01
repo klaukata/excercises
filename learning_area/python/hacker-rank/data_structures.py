@@ -71,3 +71,15 @@ def deleteNode(llist, position):
     else:
         llist = current.next
     return llist
+
+# Delete a Node
+# LINK - https://www.hackerrank.com/challenges/reverse-a-linked-list/problem?isFullScreen=true
+def reverse(llist):
+    result = None
+    current = llist
+    while current:
+        node = SinglyLinkedListNode(current.data)
+        node.next = result
+        result = node
+        current = current.next
+    return result
