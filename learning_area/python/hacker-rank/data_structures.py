@@ -27,3 +27,10 @@ def insertNodeAtTail(head, data):
         return head
     else:
         return node
+    
+# Insert a node at the head of a linked list
+# LINK - https://www.hackerrank.com/challenges/insert-a-node-at-the-head-of-a-linked-list/problem?isFullScreen=true
+def insertNodeAtHead(llist, data):
+    node = SinglyLinkedListNode(data)
+    node.next = llist
+    return node
