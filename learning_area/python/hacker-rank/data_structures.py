@@ -34,3 +34,22 @@ def insertNodeAtHead(llist, data):
     node = SinglyLinkedListNode(data)
     node.next = llist
     return node
+
+# Insert a node at a specific position in a linked list
+# LINK - https://www.hackerrank.com/challenges/insert-a-node-at-a-specific-position-in-a-linked-list/problem?isFullScreen=true
+def insertNodeAtPosition(llist, data, position):
+    current = llist
+    node = SinglyLinkedListNode(data)
+    if current:
+        count = 0
+        while current: # ?
+            if count + 1 == position:
+                node.next = current.next
+                current.next = node
+                return llist
+            else:
+                count += 1
+                current = current.next
+        return
+    else:
+        return node
