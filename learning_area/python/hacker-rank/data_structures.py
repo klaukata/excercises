@@ -14,3 +14,16 @@ def printLinkedList(head):
     while current:
         print(current.data)
         current = current.next
+
+# Insert a Node at the Tail of a Linked List
+# LINK - https://www.hackerrank.com/challenges/insert-a-node-at-the-tail-of-a-linked-list/problem?isFullScreen=true
+def insertNodeAtTail(head, data):
+    current = head
+    node = SinglyLinkedListNode(data)
+    if current:
+        while current.next:
+            current = current.next
+        current.next = node
+        return head
+    else:
+        return node
