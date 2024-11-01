@@ -42,7 +42,7 @@ def insertNodeAtPosition(llist, data, position):
     node = SinglyLinkedListNode(data)
     if current:
         count = 0
-        while current: # ?
+        while current:
             if count + 1 == position:
                 node.next = current.next
                 current.next = node
@@ -53,3 +53,21 @@ def insertNodeAtPosition(llist, data, position):
         return
     else:
         return node
+    
+# Delete a Node
+# LINK - https://www.hackerrank.com/challenges/delete-a-node-from-a-linked-list/problem?isFullScreen=true
+def deleteNode(llist, position):
+    count = 0
+    current = llist
+    if position != 0:
+        while current:
+            if position == count + 1:
+                previous = current
+                to_remove = current.next
+                following = to_remove.next
+                previous.next = following
+            count += 1
+            current = current.next
+    else:
+        llist = current.next
+    return llist
