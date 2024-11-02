@@ -72,7 +72,7 @@ def deleteNode(llist, position):
         llist = current.next
     return llist
 
-# Delete a Node
+# Reverse a linked list
 # LINK - https://www.hackerrank.com/challenges/reverse-a-linked-list/problem?isFullScreen=true
 def reverse(llist):
     result = None
@@ -83,3 +83,21 @@ def reverse(llist):
         result = node
         current = current.next
     return result
+
+# Compare two linked lists
+# LINK - https://www.hackerrank.com/challenges/compare-two-linked-lists/problem?isFullScreen=true
+def compare_lists(llist1, llist2):
+    are_equal = False
+    l1 = llist1
+    l2 = llist2
+    while l1 and l2:
+        if l1.data == l2.data:
+            if l1.next is None and l2.next is None:
+                are_equal = True
+                break
+            else:
+                l1 = l1.next
+                l2 = l2.next
+        else:
+            break
+    return int(are_equal)
