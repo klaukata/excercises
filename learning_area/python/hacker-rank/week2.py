@@ -41,3 +41,15 @@ def flippingBits(n):
     inv_num = int(inv_str, 2)
     return inv_num
 
+# Diagonal Difference
+# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-diagonal-difference/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-two
+def diagonalDifference(arr):
+    s1, s2 = 0, 0
+    i1 = 0
+    i2 = len(arr) - 1
+    for a in arr:
+        s1 += a[i1]
+        s2 += a[i2]
+        i1 += 1
+        i2 -= 1
+    return abs(s1 - s2)
