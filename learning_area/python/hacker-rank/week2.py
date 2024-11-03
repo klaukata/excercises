@@ -53,3 +53,11 @@ def diagonalDifference(arr):
         i1 += 1
         i2 -= 1
     return abs(s1 - s2)
+
+# Counting Sort 1
+# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-countingsort1/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-two
+def countingSort(arr):
+    res = [0] * 100
+    for el in arr:
+        res[el] += 1
+    return res
