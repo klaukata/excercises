@@ -54,6 +54,20 @@ def diagonalDifference(arr):
         i2 -= 1
     return abs(s1 - s2)
 
+# Counting Valleys
+# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-counting-valleys/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-two
+def countingValleys(steps, path):
+    sea_lvl = 0
+    v_n = 0
+    for i in range(steps):
+        if path[i] == 'U':
+            sea_lvl += 1
+            if sea_lvl == 0 and i != 0:
+                v_n += 1
+        elif path[i] == 'D':
+            sea_lvl -= 1
+    return v_n
+
 # Counting Sort 1
 # LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-countingsort1/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-two
 def countingSort(arr):
@@ -61,3 +75,13 @@ def countingSort(arr):
     for el in arr:
         res[el] += 1
     return res
+
+# Pangrams
+# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-pangrams/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-two
+# TODO
+def pangrams(s):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    for char in alphabet:
+        if char not in s.lower():
+            return "not pangram"
+    return "pangram"
