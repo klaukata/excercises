@@ -101,17 +101,3 @@ def compare_lists(llist1, llist2):
         else:
             break
     return int(are_equal)
-
-# Counting Valleys
-# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-counting-valleys/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-two
-def countingValleys(steps, path):
-    sea_lvl = 0
-    v_n = 0
-    for i in range(steps):
-        if path[i] == 'U':
-            sea_lvl += 1
-            if sea_lvl == 0 and i != 0:
-                v_n += 1
-        elif path[i] == 'D':
-            sea_lvl -= 1
-    return v_n
