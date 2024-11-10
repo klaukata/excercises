@@ -85,3 +85,15 @@ def pangrams(s):
         if char not in s.lower():
             return "not pangram"
     return "pangram"
+
+# Mars Exploration
+# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-mars-exploration/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-two
+# TODO
+def marsExploration(s):
+    sos = tuple('SOS')
+    err_n = 0
+    for i in range(0, len(s), 3):
+        maybe_sos = tuple(s[i:i+3])
+        single_err_n = sum(1 for a, b in zip(sos, maybe_sos) if a != b)
+        err_n += single_err_n
+    return err_n
