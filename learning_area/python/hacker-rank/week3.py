@@ -23,3 +23,15 @@ def birthday(s, d, m):
         if sum == d:
             res += 1
     return res
+
+# XOR Strings 3
+# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-strings-xor/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-three
+def strings_xor(s, t):
+    res = ""
+    for i in range(len(s)):
+        if int(s[i]) ^ int(t[i]) == 1:
+            res += '1'
+        else:
+            res += '0'
+
+    return res
