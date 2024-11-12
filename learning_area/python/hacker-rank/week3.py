@@ -35,3 +35,17 @@ def strings_xor(s, t):
             res += '0'
 
     return res
+
+# Sales by Match
+# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-sock-merchant/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-three
+def sockMerchant(n, ar):
+    pair_n = 0
+    for i, sock in enumerate(ar):
+        if sock in ar[i+1:] and sock is not None:
+            ar[i] = None
+            pair_i = ar.index(sock)
+            ar[pair_i] = None
+            pair_n += 1
+        else:
+            continue
+    return pair_n
