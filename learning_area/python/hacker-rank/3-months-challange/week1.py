@@ -131,7 +131,3 @@ def camel_case(line):
             if y == 'C':
                 arr[0] = arr[0].upper()
             print(''.join(arr).replace(' ', ''))
-
-
-
-        
