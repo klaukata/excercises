@@ -49,3 +49,16 @@ def sockMerchant(n, ar):
         else:
             continue
     return pair_n
+
+# Migratory Birds
+# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-migratory-birds/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-three
+def migratoryBirds(arr):
+    d = {}
+    for bird_id in arr:
+        if bird_id not in d.keys():
+            d[bird_id] = 1
+        else:
+            d[bird_id] += 1
+    max_sightings_n = max(d.values())
+    birds_w_max_sightings = [bird_id for bird_id, sightings_n in d.items() if sightings_n == max_sightings_n]
+    return min(birds_w_max_sightings)
