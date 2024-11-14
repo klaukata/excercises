@@ -62,3 +62,14 @@ def migratoryBirds(arr):
     max_sightings_n = max(d.values())
     birds_w_max_sightings = [bird_id for bird_id, sightings_n in d.items() if sightings_n == max_sightings_n]
     return min(birds_w_max_sightings)
+
+# Maximum Perimeter Triangle
+# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-maximum-perimeter-triangle/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-three
+def maximumPerimeterTriangle(sticks):
+    sticks.sort(reverse=True)
+    for i in range(len(sticks) - 2):
+        c, b, a = sticks[i:i+3]
+        if a + b > c:
+            return a, b, c
+        print(sticks[i:i+3])
+    return [-1]
