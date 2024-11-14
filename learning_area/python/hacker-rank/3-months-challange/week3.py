@@ -71,5 +71,4 @@ def maximumPerimeterTriangle(sticks):
         c, b, a = sticks[i:i+3]
         if a + b > c:
             return a, b, c
-        print(sticks[i:i+3])
     return [-1]
