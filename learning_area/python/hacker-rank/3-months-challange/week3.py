@@ -72,3 +72,24 @@ def maximumPerimeterTriangle(sticks):
         if a + b > c:
             return a, b, c
     return [-1]
+
+# Zig Zag Sequence
+# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-zig-zag-sequence/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-three
+def findZigZagSequence(a, n):
+    a.sort()
+    mid = int(n / 2)  # change 1
+    a[mid], a[n-1] = a[n-1], a[mid]
+
+    st = mid + 1
+    ed = n - 2 # change 2
+    while(st <= ed):
+        a[st], a[ed] = a[ed], a[st]
+        st = st + 1
+        ed = ed - 1 # change 3
+
+    for i in range (n):
+        if i == n-1:
+            print(a[i])
+        else:
+            print(a[i], end = ' ')
+    return
