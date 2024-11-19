@@ -93,3 +93,20 @@ def findZigZagSequence(a, n):
         else:
             print(a[i], end = ' ')
     return
+
+# Drawing Book
+# LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-drawing-book/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-three
+def pageCount(n, p):
+    page_n = None
+    if n % 2 == 0:
+        n += 1
+    half = n / 2
+    if p < half:
+        if p % 2 != 0:
+            p -= 1
+        page_n = p // 2
+    else:
+        if p % 2 == 0:
+            p += 1
+        page_n = (n - p) // 2
+    return page_n
