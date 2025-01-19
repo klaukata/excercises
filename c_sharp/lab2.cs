@@ -102,3 +102,57 @@ namespace Oop
         }
     }
 }
+
+/*  3. Write a class Student that stores the first name, last name, and an array of grades.
+    -   Implement a property AverageGrades to calculate and return the average of the grades.
+    -   Add a method AddGrade(int grade) to add a new grade to the array.
+    -   Implement a constructor that initializes the student's first name and last name. */
+
+public class Student
+{
+    public string Name;
+    public string Surname;
+    public List<int> GradesArray = new List<int>();
+
+    public Student(string name, string surname)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            throw new ArgumentException("Name of a student cannot be null or empty.", nameof(name));
+        }
+        if (string.IsNullOrWhiteSpace(surname))
+        {
+            throw new ArgumentException("Surname of a student cannot be null or empty.", nameof(surname));
+        }
+        Name = name;
+        Surname = surname;
+    }
+
+    // Method to add a grade to the student's list of grades
+    public void AddGrade(int newGrade)
+    {
+        if (newGrade < 0 || newGrade > 6)
+        {
+            throw new ArgumentException("Each grade should be within range <0;6>");
+        }
+        GradesArray.Add(newGrade);
+        Console.WriteLine($"Grade {newGrade} has been added.");
+    }
+
+    // Method to calculate and return the average grade of the student
+    public double AverageGrades()
+    {
+        if (GradesArray.Count == 0)
+        {
+            throw new InvalidOperationException("Student has no grades so far.");
+        }
+        double sum = 0;
+        foreach( int grade in GradesArray )
+        {
+            sum += grade;
+        }
+        double averageGrade = sum / GradesArray.Count;
+        Console.WriteLine($"Average grade for student {Name} {Surname} is equal to {averageGrade}");
+        return averageGrade;
+    }
+}
