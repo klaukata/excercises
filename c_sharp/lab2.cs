@@ -168,7 +168,8 @@ public class Student
 
  // NOTE: Class in ./Lab2CountClass.cs
 
- class Program
+using Excercise4;
+class Program
 {
     static void Main()
     {
