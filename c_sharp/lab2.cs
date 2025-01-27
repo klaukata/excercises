@@ -156,3 +156,33 @@ public class Student
         return averageGrade;
     }
 }
+
+
+/*  4.  Create a class Count with:
+ *  -   A public field value that stores a numeric value.
+ *  -   A method Add that takes one parameter and adds it to the value stored in the value field.
+ *  -   A similar method for subtraction, called Substract.
+ *  In the Main method, create several objects of the Count class and perform various operations.
+ *  Add a constructor to the Count class with one parameter that initializes the value field to the number passed as the parameter.
+ *  Change the visibility of the value field to private and add a function that prints the state of the object (the value field). */
+
+ // NOTE: Class in ./Lab2CountClass.cs
+
+ class Program
+{
+    static void Main()
+    {
+        Count c1 = new Count(10);
+        c1.Add(5);
+        c1.PrintState();    // Output: Current value = 15
+
+        Count c2 = new Count(540);
+        c2.Subtract(500.5); // Output: Current value = 39,5
+        c2.PrintState();
+
+        Count c3 = new Count(1);
+        c3.Subtract(10);
+        c3.Add(5);
+        c3.PrintState();    // Output: Current value = -4
+    }
+}
