@@ -1,4 +1,4 @@
-namespace Task1A
+namespace Task1
 {
     //  TASK 1A RELATED
     public class Person

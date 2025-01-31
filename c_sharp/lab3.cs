@@ -5,10 +5,11 @@
  *  -   Book with fields: Title, Author (of type Person), PublicationDate, and a method View()
  *  Create various objects of these classes and execute the View() methods. */
 
-using Task1A;
+using Task1;
 
 Person george = new Person("George R. R.", "Martin", 76);
 Console.WriteLine(george.View());       // Person: George R. R. Martin, aged 76 years old.
 
 Book got = new Book("A Game of Thrones", "August 1, 1996", george);
 Console.WriteLine(got.View());          // Book: A Game of Thrones, published August 1, 1996, written by George R. R. Martin
+
