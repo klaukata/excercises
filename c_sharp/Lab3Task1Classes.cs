@@ -38,5 +38,23 @@ namespace Task1
         }
     }
 
+    // TASK 1B RELATED
+    public class Reader : Person
+    {
+        private Book[] Books;
+
+        public Reader(string FirstName, string LastName, int Age, Book[] books) : base(FirstName, LastName, Age)
+        {
+            Books = books;
+        }
+        public void ViewBook()
+        {
+            Console.WriteLine($"Books saved by {FirstName} {LastName}:");
+            foreach (Book book in Books)
+            {
+                Console.WriteLine($"\t- {book.Title}");
+            }
+        }
+    }
     
 }
