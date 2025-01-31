@@ -166,7 +166,7 @@ public class Student
  *  Add a constructor to the Count class with one parameter that initializes the value field to the number passed as the parameter.
  *  Change the visibility of the value field to private and add a function that prints the state of the object (the value field). */
 
- // NOTE: Class in ./Lab2CountClass.cs
+// NOTE: Class in ./Lab2CountClass.cs
 
 using Excercise4;
 class Program
