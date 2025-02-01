@@ -14,7 +14,7 @@ namespace Task1
             Age = age;
         }
 
-        public string View()
+        public virtual string View()
         {
             return $"Person: {FirstName} {LastName}, aged {Age} years old.";
         }
@@ -54,6 +54,13 @@ namespace Task1
             {
                 Console.WriteLine($"\t- {book.Title}");
             }
+        }
+
+        // TASK 1C RELATED
+        public override void View() 
+        {
+            Console.WriteLine($"Reader: {FirstName} {LastName}, aged {Age} years old.");
+            ViewBook();
         }
     }
     

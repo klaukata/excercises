@@ -45,3 +45,17 @@ reader2.ViewBook();
         - A Game of Thrones
         - Pride and Prejudice
         - The Lord of the Rings */
+
+
+/*  1c. Add a View() method to the Reader class, which, besides 
+ *  displaying the reader's details (same as Person.View()), also prints 
+ *  the list of books read by the reader (use the already existing ViewBook() method). */
+
+reader1.View();
+
+/*  OUTPUT:
+*  Reader: Jan Kowalski, aged 1 years old.
+*  Books saved by Jan Kowalski:
+*        -A Game of Thrones
+*        - Pride and Prejudice
+*        - The Lord of the Rings */
