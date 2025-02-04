@@ -11,3 +11,13 @@ def pickingNumbers(a):
         if cnt_sum > res:
             res = cnt_sum
     return res
+
+#   Left Rotation
+#   LINK - https://www.hackerrank.com/challenges/three-month-preparation-kit-array-left-rotation/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=three-month-preparation-kit&playlist_slugs%5B%5D=three-month-week-four
+
+def rotateLeft(d, arr):
+    left_side = arr[d:]
+    right_side = arr[:d]
+    return left_side + right_side
+
+print(rotateLeft(2, [1,2,3,4,5]))
