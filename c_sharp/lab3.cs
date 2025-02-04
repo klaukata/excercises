@@ -59,3 +59,15 @@ reader1.View();
 *        -A Game of Thrones
 *        - Pride and Prejudice
 *        - The Lord of the Rings */
+
+/*  1d. Modify the View() methods in the Person and Reader classes using appropriate keywords so that executing the following code:
+*       Person o = new Reader(...);
+*       o.View();
+*   calls the View() method from the Reader class. */
+
+// SOLUTION: I used 'virtual' keyword in the 'Person' class
+
+/*  1e. Change the visibility of the fields in the Person class to private. If necessary, modify the Reader.View() 
+ *  method so that its output remains unchanged. Use properties if needed. */
+
+// SOLUTION: I changed properities of a base class to Protected, so that they still can be accessible from a Reader class

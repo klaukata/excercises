@@ -3,9 +3,9 @@ namespace Task1
     //  TASK 1A RELATED
     public class Person
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
+        protected string FirstName { get; set; } 
+        protected string LastName { get; set; }
+        protected int Age { get; set; }
 
         public Person(string firstName, string lastName, int age)
         {
@@ -34,7 +34,7 @@ namespace Task1
 
         public string View()
         {
-            return $"Book: {Title}, published {PublicationDate}, written by {Author.FirstName} {Author.LastName}";
+            return $"Book: {Title}, published {PublicationDate}, written by {Author.View()}";
         }
     }
 
@@ -49,7 +49,6 @@ namespace Task1
         }
         public void ViewBook()
         {
-            Console.WriteLine($"Books saved by {FirstName} {LastName}:");
             foreach (Book book in Books)
             {
                 Console.WriteLine($"\t- {book.Title}");
@@ -57,10 +56,11 @@ namespace Task1
         }
 
         // TASK 1C RELATED
-        public override void View() 
+        public override string View() 
         {
-            Console.WriteLine($"Reader: {FirstName} {LastName}, aged {Age} years old.");
             ViewBook();
+            return $"Reader: {FirstName} {LastName}, aged {Age} years old.";
+            
         }
     }
     
