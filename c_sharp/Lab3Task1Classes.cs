@@ -48,7 +48,7 @@ namespace Task1
         {
             Books = books;
         }
-        public string ViewBook()
+        public virtual string ViewBook()
         {
             string retStr = "";
             foreach (Book book in Books)
@@ -63,6 +63,25 @@ namespace Task1
         {
             return $"Reader: {FirstName} {LastName}, aged {Age} years old, has read the following books:\n{ViewBook()}";
             
+        }
+    }
+
+    // TASK 1F RELATED
+    public class Reviewer : Reader
+    {
+        private static Random rnd = new Random();
+        public Reviewer(string FirstName, string LastName, int Age, Book[] books) : base(FirstName, LastName, Age, books)
+        {}
+
+        public override string ViewBook()
+        {
+            string retStr = "";
+            foreach (Book book in GetBooks)
+            {
+                int rating = rnd.Next(11);  // random int in range <0, 11)
+                retStr += $"\t- {book.Title}, and ranked it {rating}/10\n";
+            }
+            return retStr;
         }
     }
     

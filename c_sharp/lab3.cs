@@ -33,8 +33,8 @@ Book[] booksR2 = { gg, pap, cap,  lotr };
 
 Reader reader1 = new Reader("Jan", "Kowalski", 1, booksR1);
 Reader reader2 = new Reader("Max", "Musterman", 1, booksR1);
-reader1.ViewBook();
-reader2.ViewBook();
+Console.WriteLine(reader1.ViewBook());
+Console.WriteLine(reader2.ViewBook());
 
 /* OUTPUT:
     Books saved by Jan Kowalski:
@@ -51,7 +51,7 @@ reader2.ViewBook();
  *  displaying the reader's details (same as Person.View()), also prints 
  *  the list of books read by the reader (use the already existing ViewBook() method). */
 
-reader1.View();
+Console.WriteLine(reader1.View());
 
 /*  OUTPUT:
 *  Reader: Jan Kowalski, aged 1 years old.
@@ -71,3 +71,26 @@ reader1.View();
  *  method so that its output remains unchanged. Use properties if needed. */
 
 // SOLUTION: I changed properities of a base class to Protected, so that they still can be accessible from a Reader class
+
+/*  1f. Create a Reviewer class that inherits from the Reader class. 
+ *  The View() method in Reviewer should display the list of books the reviewer has read, 
+ *  along with a randomly generated rating for each book (different for each execution of the View() method).
+ *  -   Is it necessary for the Book list in the Reader class to be protected, or can it remain private?
+ *  -   Create 2 reviewers, assign them books, and execute the View() method. */
+
+ // ANSWER: Instad of changing Book list in Reader class to protected, we can chreate a prottected getter, that returns a private value. 
+
+Reviewer reviewer1 = new Reviewer("Alice", "Smith", 30, new Book[] {lotr, pap});
+Reviewer reviewer2 = new Reviewer("Bob", "Johnson", 25, new Book[] { cap });
+
+Console.WriteLine(reviewer1.View());
+Console.WriteLine();
+Console.WriteLine(reviewer2.View());
+
+/*  Output:
+ *  Reader: Alice Smith, aged 30 years old, has read the following books:
+ *  - The Lord of the Rings, and ranked it 3/10
+ *  - Pride and Prejudice, and ranked it 4/10
+ *  
+ *  Reader: Bob Johnson, aged 25 years old, has read the following books:
+ *  - Crime and Punishment, and ranked it 9/10 */
