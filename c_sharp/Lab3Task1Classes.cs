@@ -42,24 +42,26 @@ namespace Task1
     public class Reader : Person
     {
         private Book[] Books;
+        protected Book[] GetBooks => Books; // getter name = ReadBooks, returns a private filed Books (task 1f related) 
 
         public Reader(string FirstName, string LastName, int Age, Book[] books) : base(FirstName, LastName, Age)
         {
             Books = books;
         }
-        public void ViewBook()
+        public string ViewBook()
         {
+            string retStr = "";
             foreach (Book book in Books)
             {
-                Console.WriteLine($"\t- {book.Title}");
+                retStr += $"\t- {book.Title}\n";
             }
+            return retStr
         }
 
         // TASK 1C RELATED
         public override string View() 
         {
-            ViewBook();
-            return $"Reader: {FirstName} {LastName}, aged {Age} years old.";
+            return $"Reader: {FirstName} {LastName}, aged {Age} years old, has read the following books:\n{ViewBook()}";
             
         }
     }
