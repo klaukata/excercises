@@ -94,3 +94,38 @@ Console.WriteLine(reviewer2.View());
  *  
  *  Reader: Bob Johnson, aged 25 years old, has read the following books:
  *  - Crime and Punishment, and ranked it 9/10 */
+
+
+ /*  1g. In the Main() method, create a list of Person objects (List<Person>) 
+ *  and add both Reader and Reviewer objects to it.
+ *  Use a loop to call the View() method for all objects in the list. */
+
+
+class Program
+{
+    static void Main()
+    {
+        //  arguments below, such as (booksR1, lotr and pap), are defined in the code above
+        Reader reader1 = new Reader("Jan", "Kowalski", 1, booksR1);
+        Reviewer reviewer1 = new Reviewer("Alice", "Smith", 30, new Book[] { lotr, pap });
+
+        List<Person> people = new List<Person>();   // empty array of Person objs
+        people.Add(reader1);
+        people.Add(reviewer1);
+        foreach (Person prs in people)
+        {
+            Console.WriteLine(prs.View());
+        }
+    }
+}
+
+/*  Output:
+    Reader: Jan Kowalski, aged 1 years old, has read the following books:
+            - A Game of Thrones
+            - Pride and Prejudice
+            - The Lord of the Rings
+
+    Reader: Alice Smith, aged 30 years old, has read the following books:
+            - The Lord of the Rings, and ranked it 6/10
+            - Pride and Prejudice, and ranked it 9/10 
+*/
