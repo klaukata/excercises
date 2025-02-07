@@ -1,19 +1,39 @@
--- Select the first name, last name, and department for all employees. Sort the data by department and then by last name.
+-- 1. Select the first name, last name, and department for all employees. Sort the data by department and then by last name.
+select imie, nazwisko, dzial
+from pracownicy
+order by dzial, nazwisko
 
--- Select job positions from the employees table (the query should return only distinct rows).
+-- 2. Select job positions from the employees table (the query should return only distinct rows).
+select distinct stanowisko
+from pracownicy
 
--- Select first name, last name, job position, and department for sales representatives.
+-- 3. Select first name, last name, job position, and department for sales representatives.
+select imie, nazwisko, stanowisko, dzial
+from pracownicy
+where stanowisko='Sprzedawca'
 
--- Select first name, last name, job position, and department for sales representatives or employees from the technical department.
+-- 4. Select first name, last name, job position, and department for sales representatives or employees from the technical department.
+select imie, nazwisko, stanowisko, dzial
+from pracownicy
+where stanowisko in ('Sprzedawca', 'Techniczny')
 
--- Display first name, last name, job position, and department for employees who only work as a manager in the customer service 
+-- 5. Display first name, last name, job position, and department for employees who only work as a manager in the customer service 
 -- department or the technical department.
+select imie, nazwisko, stanowisko, dzial
+from pracownicy
+where stanowisko = 'Kierownik' and dzial in ('Obsługa klienta', 'Techniczny')
 
--- Select brand, type, production year, and engine capacity for cars with an engine capacity of 1400 or 1600 cm³ (use the IN predicate).
+-- 6. Select brand, type, production year, and engine capacity for cars with an engine capacity of 1400 or 1600 cm³ (use the IN predicate).
+select marka, typ, rok_prod, poj_silnika
+from samochody
+where poj_silnika in (1400, 1600)
 
--- Select brand, type, production year, and engine capacity for cars with an engine capacity between 1100 and 1800 cm³ (use the BETWEEN predicate).
+-- 7. Select brand, type, production year, and engine capacity for cars with an engine capacity between 1100 and 1800 cm³ (use the BETWEEN predicate).
+select marka, typ, rok_prod, poj_silnika
+from samochody
+where poj_silnika between 1100 and 1800
 
--- Select first name, last name, city, street, and credit card number for customers who own a credit card.
+-- 8. Select first name, last name, city, street, and credit card number for customers who own a credit card.
 
 -- Select the first and last names of customers whose last names do not start with 'K' or 'D'.
 
