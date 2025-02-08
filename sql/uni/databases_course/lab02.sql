@@ -81,18 +81,60 @@ select
 from pracownicy
 where pensja > (select avg(pensja) from pracownicy)
 
--- Provide cars (number, brand, and type) that have never been rented by any customer.
+-- 29. Provide cars (number, brand, and type) that have never been rented by any customer.
+select 
+	s.nr_samochodu,
+	marka,
+	typ
+from samochody s
+left outer join wypozyczenia w on s.nr_samochodu = w.nr_samochodu
+where w.nr_wypożyczenia is null
 
+-- 30. Select data for employees (first name, last name, job position, department, and salary) for employees who earn 
+-- more than the average salary in each department.
+select 
+	imie,
+	nazwisko,
+	stanowisko,
+	dzial,
+	pensja
+from pracownicy p
+where pensja > (select avg(pensja) from pracownicy where dzial = p.dzial)
 
--- Select data for employees (first name, last name, job position, department, and salary) for employees who earn more than the average salary in each department.
+-- 31. Select data for employees (first name, last name, job position, department, and salary) for employees whose salary 
+-- is higher than the lowest average salary in each department.
+select 
+	imie,
+	nazwisko,
+	stanowisko,
+	dzial,
+	pensja
+from pracownicy
+where pensja > (
+	select min(average)
+	from (
+		select avg(pensja) as average
+		from pracownicy
+		group by dzial
+	) as subquery
+)
 
-
--- Select data for employees (first name, last name, job position, department, and salary) for employees whose salary is higher than the lowest average salary in each department.
-
-
--- Create a view that contains first name, last name, company name, NIP (Tax Identification Number), and city for customers who own a company.
+-- 32. Create a view that contains first name, last name, company name, NIP (Tax Identification Number), and city for customers who own a company.
 -- After creating the view, display all the data from the view.
+create view klienci_z_firmami
+as 
+select 
+	imie,
+	nazwisko,
+	firma,
+	nip,
+	miasto
+from klienci
+where firma is not null
+go
 
+select *
+from klienci_z_firmami
 
 -- Insert one sample record into the cars table in the Car Rental database.
 
