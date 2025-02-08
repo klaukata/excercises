@@ -34,35 +34,97 @@ from samochody
 where poj_silnika between 1100 and 1800
 
 -- 8. Select first name, last name, city, street, and credit card number for customers who own a credit card.
+select imie, nazwisko, miasto, ulica, nr_karty_kredyt
+from klienci
+where nr_karty_kredyt is not null
 
--- Select the first and last names of customers whose last names do not start with 'K' or 'D'.
+-- 9. Select the first and last names of customers whose last names do not start with 'K' or 'D'.
+select imie, nazwisko
+from klienci
+where nazwisko not like 'K%' and nazwisko not like 'D%'
 
--- Select the first and last names of customers whose last names have 'O' as the second letter.
+-- 10. Select the first and last names of customers whose last names have 'O' as the second letter.
+select imie, nazwisko
+from klienci
+where nazwisko like '_o%'
 
--- Select last names of employees, and the names of cities and streets where they rented cars. Sort the results in descending order by last name.
+-- 11. Select last names of employees, and the names of cities and streets where they rented cars. Sort the results in descending order by last name.
+select p.nazwisko, m.miasto, m.ulica
+from pracownicy as p
+inner join miejsca m on p.nr_miejsca = m.nr_miejsca
+order by nazwisko desc
 
--- Select first name, last name, salary, and bonus. Additionally, insert a calculated column named "Total Pay", which is the sum of salary 
+-- 12. Select first name, last name, salary, and bonus. Additionally, insert a calculated column named "Total Pay", which is the sum of salary 
 -- and bonus for each employee.
 -- Hint: Use the COALESCE function to ensure a proper amount is displayed even for employees who do not receive a bonus.
+select imie, nazwisko, pensja, dodatek, coalesce(pensja+dodatek, pensja) as 'do wyplaty'
+from pracownicy 
 
--- Select first name, last name, department, job position, and employment date for each employee hired after January 1, 1998.
+-- 13. Select first name, last name, department, job position, and employment date for each employee hired after January 1, 1998.
+select imie, nazwisko, dzial, stanowisko, data_zatr
+from pracownicy 
+where data_zatr > '1998-01-01'
 
--- Provide first name, last name, department, job position, and employment date for employees who have been working for less than 6 years.
+-- 14. Provide first name, last name, department, job position, and employment date for employees who have been working for less than 6 years.
 -- The employment date field should contain only the year of employment and should be labeled "Employment Year".
+select imie, nazwisko, dzial, stanowisko, year(data_zatr) as 'data zatrudnienia'
+from pracownicy 
+where datediff(year, data_zatr, getdate()) < 6
 
--- Provide first name, last name, department, job position, and employment date for each employee.
+-- 15. Provide first name, last name, department, job position, and employment date for each employee.
 -- Note: The employment date should be split into three columns: Year, Month, Day (Column headers should be "Year", "Month", "Day")
+select 
+	imie, 
+	nazwisko, 
+	dzial, 
+	stanowisko, 
+	year(data_zatr) as rok,
+	month(data_zatr) as miesiac,
+	day(data_zatr) as dzien
+from pracownicy
 
--- Select last names of customers, rental number, rental date, return date, and rental duration in days.
+-- 16. Select last names of customers, rental number, rental date, return date, and rental duration in days.
 -- Rental date and return date should be formatted as DD/MM/YYYY.
 -- The number of days should be increased by 1 in calculations (e.g., if a customer rented and returned the car on the same day).
+select 
+	nazwisko,
+	nr_wypożyczenia,
+	convert(varchar, data_wyp, 103) as 'data wypozyczenia',
+	convert(varchar, data_odd, 103) as 'data oddania',
+	DATEDIFF(day, data_wyp, data_odd) + 1 as 'ilosc dni'
+from wypozyczenia w
+inner join klienci k on w.nr_klienta = k.nr_klienta
+where data_odd is not null
 
--- Provide the total salary, average salary, minimum salary, and maximum salary for all employees.
--- The result should be displayed in the following format:
+-- 17. Provide the total salary, average salary, minimum salary, and maximum salary for all employees.
+select
+	sum(pensja) as 'Suma pensji',
+	avg(pensja) as 'Średnia pensji',
+	min(pensja) as 'Minimalna pensja',
+	max(pensja) as 'Maksymalna pensja'
+from pracownicy
 
--- Provide the number of job positions for employees. The column header should be "Number of Positions".
+-- 18. Provide the number of job positions for employees. The column header should be "Number of Positions".
+select
+	count(distinct stanowisko) as 'Ilosc stanowisk'
+from pracownicy
 
--- Provide the total salary, average salary, minimum salary, and maximum salary for employees working in each job position.
--- The result should be displayed in the following format:
+-- 19. Provide the total salary, average salary, minimum salary, and maximum salary for employees working in each job position.
+select
+	stanowisko,
+	sum(pensja) as 'Suma pensji',
+	avg(pensja) as 'Średnia pensji',
+	min(pensja) as 'Minimalna pensja',
+	max(pensja) as 'Maksymalna pensja',
+	count(*) as 'Ilosc'
+from pracownicy
+group by stanowisko
 
--- Display the last names of employees who rented cars with a total individual value exceeding 400 PLN.
+-- 20. Display the last names of employees who rented cars with a total individual value exceeding 400 PLN.
+select 
+	p.nazwisko,
+	sum(cena_jedn) as 'Kwota'
+from wypozyczenia as w
+inner join pracownicy p on w.nr_pracow_wyp = p.nr_pracownika
+group by nazwisko
+having sum(cena_jedn) > 400
