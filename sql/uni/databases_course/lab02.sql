@@ -136,24 +136,22 @@ go
 select *
 from klienci_z_firmami
 
--- Insert one sample record into the cars table in the Car Rental database.
-
-
--- Delete information about all cars in the Car Rental database whose brand names start with the letter 'F'.
-
-
--- For all employees who do not receive a salary bonus, increase their salary by 10%.
-
-
--- Using Transact-SQL commands DECLARE and PRINT, provide the number of Mercedes cars available in the rental.
+-- 36. Using Transact-SQL commands DECLARE and PRINT, provide the number of Mercedes cars available in the rental.
 -- The response should have the form:
 -- "There are X Mercedes cars in the rental," where X is the number of Mercedes, returned by the query.
+declare @mercedes_num
+select @mercedes_num = count(*) from samochody where marka = 'Mercedes'
+print 'Jest ' + cast(@mercedes_num as varchar) + ' Mercedesów w wypożyczalni.'
 
-
--- Using Transact-SQL commands, create a query that checks the salary levels in the rental.
+-- 37. Using Transact-SQL commands, create a query that checks the salary levels in the rental.
 -- If the average salary in the company is less than 1600, print the message: "Salaries are too low!".
 -- If the average salary is higher, print: "Salaries are okay."
--- Hint: Use the IF...ELSE block.
+declare @srednia decimal(6, 2)
+select @srednia = avg(pensja) from pracownicy
+if @srednia < 1600
+	print 'Zarobki są za małe!'
+else
+	print 'Zarobki są w porządku'
 
 
 -- Using Transact-SQL commands, create a query that provides the number of cars rented by the customer with ID = 6.
