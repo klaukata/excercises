@@ -36,3 +36,7 @@ delete from klienci_kl_bo
 where miasto like 'W%'
 
 -- 18. Increase the salary by 10% for all employees who do not receive a salary allowance. 
+
+update klienci_kl_bo
+set pensja = pensja * 1.1
+where dodatek is null
