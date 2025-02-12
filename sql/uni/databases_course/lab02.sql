@@ -166,11 +166,19 @@ if @num = 0
 else 
 	print 'Klient o podanym identyfikatorze wypożyczył: ' + cast(@num as varchar) + ' samochody.'
 
--- Using Transact-SQL commands, create a query that displays first name, last name, job position, and salary for each employee.
+-- 39. Using Transact-SQL commands, create a query that displays first name, last name, job position, and salary for each employee.
 -- Note: In the salary field, instead of the amount in numbers, display text:
+--	- Low salary (if the salary is less than 1500),
+--  - Medium salary (for salaries between 1500 and 2000 inclusive),
+--  - High salary (for salaries greater than 2000).
 
---     Low salary (if the salary is less than 1500),
---     Medium salary (for salaries between 1500 and 2000 inclusive),
---     High salary (for salaries greater than 2000).
---     Hint: Use the CASE expression.
-    
+select
+	imie,
+	nazwisko,
+	stanowisko,
+	case 
+		when pensja < 1500 then 'Niskie zarobki'
+		when pensja > 2000 then 'Wysokie zarobki'
+		else 'Średnie zarobki'
+	end as pensja
+from pracownicy
