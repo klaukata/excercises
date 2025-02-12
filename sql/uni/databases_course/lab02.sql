@@ -154,14 +154,17 @@ else
 	print 'Zarobki są w porządku'
 
 
--- Using Transact-SQL commands, create a query that provides the number of cars rented by the customer with ID = 6.
+-- 38. Using Transact-SQL commands, create a query that provides the number of cars rented by the customer with ID = 6.
+-- If the customer rented one car (or more), print the message: "The customer with the given ID rented X cars," where X is the number of cars rented.
+-- If the customer did not rent any cars, the message should be: "The customer with the given ID rented nothing!"
+-- Hint: Use the IF EXISTS expression.
 
---     If the customer rented one car (or more), print the message:
---     "The customer with the given ID rented X cars," where X is the number of cars rented.
---     If the customer did not rent any cars, the message should be:
---     "The customer with the given ID rented nothing!"
---     Hint: Use the IF EXISTS expression.
-
+declare @num int
+select @num = count(*) from wypozyczenia where nr_klienta = 6
+if @num = 0
+	print 'Klient o podanym identyfikatorze nic nie wypożyczył!'
+else 
+	print 'Klient o podanym identyfikatorze wypożyczył: ' + cast(@num as varchar) + ' samochody.'
 
 -- Using Transact-SQL commands, create a query that displays first name, last name, job position, and salary for each employee.
 -- Note: In the salary field, instead of the amount in numbers, display text:
