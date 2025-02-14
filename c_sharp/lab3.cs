@@ -129,3 +129,40 @@ class Program
             - The Lord of the Rings, and ranked it 6/10
             - Pride and Prejudice, and ranked it 9/10 
 */
+
+//  2. Write a program with two classes: Car and PassengerCar. 
+//  These classes should contain the following fields:
+//  -   Car: Brand, Model, Body Type, Color, Year of Production, Mileage (cannot be negative).
+//  -   PassengerCar: Weight(should be in the range of 2 to 4.5 tons), Engine Capacity(should be in the range of 0.8 to 3.0 liters), 
+//      Number of Passengers.
+//  The PassengerCar class should inherit from the Car class. In both classes, 
+//  create a constructor that takes input from the user. Additionally, in the Car class, 
+//  overload the constructor so that field values can be passed as parameters.
+//  In the Car class, create a method that displays car information. Override this method in the 
+//  PassengerCar class.
+//  In the Main() method, create an object of the PassengerCar class and two 
+//  objects of the Car class (using different constructors). Display the information about the cars
+
+// Classes Car and PassengerCar defined in Lab3Task2Classes.cs file
+
+using Task2;
+
+class Program
+{
+    static void Main()
+    {
+        Car c1 = new Car("Peugeot", "308", "hatchback", "gray", 2014, 100000);
+        c1.ShowInfo();
+        // OUTPUT: Peugeot 308, hatchback, gray, 2014, 100000 km
+
+        Car c2 = new Car("Toyota", "Corolla", "sedan", "black", 2020, 50000);
+        c2.ShowInfo();
+        // OUTPUT: Toyota Corolla, sedan, black, 2020, 50000 km
+
+        PassengerCar pc1 = new PassengerCar("Ford", "Mustang", "SUV", "white", 2020, 43000, 2.1, 3, 5);
+        pc1.ShowInfo();
+        // OUTPUT: Ford Mustang, SUV, white, 2020, 43000 km
+        //         Number of passengers: 5, weight: 2,1, engine capacity: 3
+    }
+}
+
